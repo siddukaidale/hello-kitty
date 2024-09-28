@@ -67,15 +67,15 @@
       }
     },
     "appcd_d11721ef-842e-49a3-8b21-ee13c624be2f": {
-      "name": "aws_s3-hello-kitty-policy",
+      "name": "marulasiddappalock",
       "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"AllowKmsAccess\",\n      \"Action\": [\n        \"kms:Decrypt\",\n        \"kms:Encrypt\",\n        \"kms:GenerateDataKey\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": [\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.kms_arn}\"\n      ]\n    },\n    {\n      \"Sid\": \"hellokittyIMAGESBUCKETS3Bucket551e1d2b88ec540687cfc51521bbe894\",\n      \"Action\": [\n        \"s3:PutObject\",\n        \"s3:ListBucket\",\n        \"s3:GetObject\",\n        \"s3:GetObjectVersion\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": [\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.arn}\",\n        \"${module.appcd_551e1d2b-88ec-5406-87cf-c51521bbe894.arn}/*\"\n      ]\n    }\n  ]\n}",
       "role": "${module.appcd_b71fd16c-797e-5a95-8e1b-ab22f1e34f43.name}",
       "role_type": "Custom",
       "source": "./modules/aws_iam_role_policy"
     },
     "appcd_d3a67d82-14c0-4138-95d7-dedbb3394699": {
-      "name": "Writer",
-      "policy": "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"CloudWatchLogGroup86ec452a770a59bf87dd67ed883e25e50\",\n      \"Action\": [\n        \"logs:CreateLogGroup\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": [\n        \"${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.arn}\"\n      ]\n    },\n    {\n      \"Sid\": \"CloudWatchLogGroup86ec452a770a59bf87dd67ed883e25e51\",\n      \"Action\": [\n        \"logs:CreateLogStream\",\n        \"logs:PutLogEvents\"\n      ],\n      \"Effect\": \"Allow\",\n      \"Resource\": [\n        \"${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.arn}:*\"\n      ]\n    }\n  ]\n}",
+      "name": "marulasiddappa",
+      "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"CloudWatchLogGroup86ec452a770a59bf87dd67ed883e25e5\",\"Action\":[\"logs:CreateLogGroup\"],\"Effect\":\"Allow\",\"Resource\":[\"${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.arn}\"]},{\"Sid\":\"\",\"Action\":[\"logs:CreateLogStream\",\"logs:PutLogEvents\"],\"Effect\":\"Allow\",\"Resource\":[\"${module.appcd_86ec452a-770a-59bf-87dd-67ed883e25e5.arn}:*\"]}]}",
       "role": "${module.appcd_b71fd16c-797e-5a95-8e1b-ab22f1e34f43.name}",
       "role_type": "Writer",
       "source": "./modules/aws_iam_role_policy"
